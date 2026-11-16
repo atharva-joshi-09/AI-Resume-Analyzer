@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Resume Analyzer</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="hero">
+  <h1>AI Resume Analyzer</h1>
+  <p>Analyze your resume with AI &mdash; instant scoring, skill detection, and improvement tips.</p>
+</header>
+
+<main class="container">
+
+  <!-- ============ UPLOAD CARD ============ -->
+  <section class="card" id="upload-card">
+    <h2>Upload Resume</h2>
+
+    <div id="drop-zone" class="drop-zone">
+      <p class="drop-zone__icon">📄</p>
+      <p><strong>Drag &amp; drop your PDF resume here</strong></p>
+      <p class="muted">or</p>
+      <div class="upload-actions">
+        <button type="button" id="browse-btn" class="btn btn--secondary">Browse Files</button>
+        <button type="button" id="sample-btn" class="btn btn--secondary">Try Sample Resume</button>
+      </div>
+      <input type="file" id="file-input" accept="application/pdf,.pdf" hidden />
+      <p id="file-name" class="file-name"></p>
+    </div>
+
+    <label for="job-description" class="field-label">Target Job Description <span class="muted">(optional)</span></label>
+    <textarea id="job-description" rows="6" placeholder="Paste the job description here..."></textarea>
+
+    <button type="button" id="analyze-btn" class="btn btn--primary" disabled>Analyze Resume</button>
+
+    <p class="privacy-note">Your resume is processed for analysis and is not permanently stored by this demo application.</p>
+
+    <div id="error-box" class="error-box" hidden></div>
+  </section>
+
+  <!-- ============ LOADING STATE ============ -->
+  <section class="card" id="loading-card" hidden>
+    <div class="loader"></div>
+    <p class="loading-title">Analyzing your resume...</p>
+    <ul class="loading-steps">
+      <li id="step-1">Extracting resume text...</li>
+      <li id="step-2">Evaluating skills...</li>
+      <li id="step-3">Checking ATS compatibility...</li>
+      <li id="step-4">Generating recommendations...</li>
+    </ul>
+  </section>
+
+  <!-- ============ RESULTS ============ -->
+  <section id="results" hidden>
+
+    <div id="demo-banner" class="demo-banner" hidden>
+      ⚠️ Demo analysis mode &mdash; the AI provider was unavailable, so this result was generated with local rule-based checks instead of a live AI call.
+    </div>
+
+    <div class="card scores-card">
+      <div class="score-block">
+        <div class="score-circle" id="overall-score-circle"><span id="overall-score-value">0</span></div>
+        <p class="score-label">Resume Score</p>
+      </div>
+      <div class="score-block">
+        <div class="score-circle score-circle--secondary" id="ats-score-circle"><span id="ats-score-value">0</span></div>
+        <p class="score-label">ATS Compatibility (estimated)</p>
+      </div>
+      <div class="score-block" id="job-match-block" hidden>
+        <div class="score-circle score-circle--tertiary" id="job-match-circle"><span id="job-match-value">0</span></div>
+        <p class="score-label">Job Match</p>
+      </div>
+    </div>
+    <p class="disclaimer">Scores are AI-generated estimates, not an official ATS score or guarantee of hiring outcomes.</p>
+
+    <div class="card">
+      <h2>AI Summary</h2>
+      <p id="summary-text"></p>
+    </div>
+
+    <div class="card">
+      <h2>Detected Skills</h2>
+      <div id="skills-list" class="chip-list"></div>
+    </div>
+
+    <div class="card" id="missing-skills-card" hidden>
+      <h2>Potentially Missing Skills</h2>
+      <p class="muted small">Not clearly mentioned in the resume &mdash; this doesn't necessarily mean you lack them.</p>
+      <div id="missing-skills-list" class="chip-list chip-list--muted"></div>
+    </div>
+
+    <div class="card" id="keywords-card" hidden>
+      <h2>Job Match Keywords</h2>
+      <div class="keyword-columns">
+        <div>
+          <h3>Matching</h3>
+          <div id="matched-keywords-list" class="chip-list chip-list--good"></div>
+        </div>
+        <div>
+          <h3>Not Clearly Mentioned</h3>
+          <div id="missing-keywords-list" class="chip-list chip-list--muted"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Strengths</h2>
+      <ul id="strengths-list" class="list list--good"></ul>
+    </div>
+
+    <div class="card">
+      <h2>Areas to Improve</h2>
+      <ul id="weaknesses-list" class="list list--warn"></ul>
+    </div>
+
+    <div class="card">
+      <h2>Section Analysis</h2>
+      <div id="section-analysis-list" class="section-list"></div>
+    </div>
+
+    <div class="card">
+      <h2>AI Recommendations</h2>
+      <ul id="suggestions-list" class="list list--info"></ul>
+    </div>
+
+    <button type="button" id="reset-btn" class="btn btn--secondary reset-btn">Analyze Another Resume</button>
+  </section>
+
+</main>
+
+<footer>
+  <p>AI Resume Analyzer &mdash; college project demo. Not an official ATS or hiring tool.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

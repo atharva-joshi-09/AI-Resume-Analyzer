@@ -1,0 +1,21 @@
+Job Title: Java Backend Developer (Entry Level)
+
+We are looking for an enthusiastic Java Backend Developer to join our engineering team.
+
+Responsibilities:
+- Design and develop REST APIs using Java and Spring Boot
+- Work with relational databases such as MySQL or PostgreSQL
+- Write unit tests using JUnit
+- Collaborate using Git and GitHub
+- Participate in code reviews and agile ceremonies
+
+Requirements:
+- Strong fundamentals in Java and object-oriented programming
+- Experience with Spring Boot and REST API development
+- Familiarity with SQL and relational databases
+- Understanding of Git version control
+- Bonus: exposure to Docker, AWS, or CI/CD pipelines
+- Bonus: experience with JUnit and automated testing
+
+This is a great opportunity for a recent graduate to grow their backend engineering skills
+in a collaborative environment.

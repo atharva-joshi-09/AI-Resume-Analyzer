@@ -1,0 +1,42 @@
+Rahul Sharma
+rahul.sharma@example.com | +91-9876543210 | Indore, India
+github.com/rahulsharma-demo
+
+PROFESSIONAL SUMMARY
+Final-year B.Tech Computer Science student with a strong foundation in Java backend
+development, seeking an entry-level Backend Developer role.
+
+EDUCATION
+B.Tech in Computer Science and Engineering
+XYZ Institute of Technology, 2022 - 2026
+CGPA: 8.4 / 10
+
+EXPERIENCE
+Backend Development Intern - CodeNest Solutions (June 2025 - Aug 2025)
+- Built and maintained REST APIs using Java and Spring Boot for an internal inventory tool.
+- Wrote unit tests with JUnit, improving module test coverage from 40% to 75%.
+- Collaborated with a team of 4 using Git and GitHub for version control.
+
+PROJECTS
+Library Management System (Spring Boot, MySQL, REST API)
+- Designed a REST API backend for managing books, members, and borrow records.
+- Implemented JWT-free session handling and input validation using Spring Boot Validation.
+- Reduced average API response time by 30% by adding database indexing.
+
+Resume Analyzer (Java, PDFBox, JavaScript)
+- Built a simple PDF text-extraction pipeline using Apache PDFBox.
+- Created a REST endpoint returning structured JSON results consumed by a JS frontend.
+
+SKILLS
+Languages: Java, Python, SQL, JavaScript
+Frameworks: Spring Boot, REST APIs
+Databases: MySQL
+Tools: Git, GitHub, Maven, IntelliJ IDEA
+Concepts: Data Structures, Algorithms, OOP
+
+CERTIFICATIONS
+- Java Programming Certification - Coursera
+- Spring Boot Fundamentals - Udemy
+
+EXTRACURRICULAR ACTIVITIES
+- Core member, college Coding Club - organized 2 hackathons for 100+ participants.
