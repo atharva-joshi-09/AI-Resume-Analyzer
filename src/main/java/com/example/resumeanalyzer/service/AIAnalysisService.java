@@ -143,7 +143,8 @@ public class AIAnalysisService {
         try {
             response = getHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         } catch (Exception e) {
-            throw new AiServiceException("Could not reach the AI provider.", e);
+            log.warn("Could not reach the AI provider: {}", e.getMessage(), e);
+            throw new AiServiceException("Could not reach the AI provider: " + e.getMessage(), e);
         }
 
         if (response.statusCode() != 200) {
